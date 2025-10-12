@@ -1,14 +1,23 @@
 # TP-Analitica-Descriptiva
 
+El presente proyecto consiste en un análisis del mercado inmobiliario con el objetivo final de un modelo de regresión que sirva para predecir los precios de las propiedades. 
+
 El mercado inmobiliario es altamente competitivo y volátil, con gran heterogeneidad entre distintas comunidades. Inmobiliarias y desarrolladoras necesitan información precisa para fijar precios de publicación, evaluar oportunidades de inversión y analizar tendencias de oferta. Si los precios se basan en operaciones anteriores de similares características y no en la mera voluntad del vendedor las partes obtendrán un trato más justo (interés del gobierno en busca de un equilibrio general) y las inmobiliarias estarán más informadas para tomar decisiones.
 
-Nuestro objetivo está sobretodo en la plataforma de la inmobiliaria Lianjia y los potenciales clientes que navegan en ella. En particular, buscamos satisfacer el interés de Lianjia en identificar el tipo de propiedades que mejor se venden y ver cuál será el precio de venta de cierta propiedad tras su publicación, con el fin de visibilizar en la plataforma a aquellas propiedades que más rédito le van a generar a la compañía. Desde el lado del comprador y cliente inmobiliario, esté análisis busca poder identificar oportunidades en el mercado de real estate.
+Nuestro foco de estudio está en las operaciones de la plataforma inmobiliaria Lianjia y los potenciales clientes que navegan en ella. En particular, con este trabajo buscamos satisfacer a ambas partes. Primero, satisfacer el interés de Lianjia en identificar el tipo de propiedades que mejor se venden y el precio de venta de las propiedades publicadas, con el fin de visibilizar en la plataforma a aquellas propiedades que más rédito le van a generar a la compañía. Desde el lado del comprador y cliente inmobiliario, esté análisis busca poder identificar oportunidades en el mercado de real estate.
 
-El dataset utilizado se denomina "Housing price in Beijing" (https://www.kaggle.com/datasets/ruiqurm/lianjia?resource=download) y abarca propiedades en venta en Beijing durante los años 2011-2017, sin extenderse a años posteriores ni a propiedades en alquiler. En él buscamos responder algunas preguntas e hipótesis que guían nuestro análisis.
+El dataset utilizado se denomina  ("Housing price in Beijing" [https://www.kaggle.com/datasets/ruiqurm/lianjia]) y abarca la venta de propiedades en Beijing principalmente durante los años 2011-2017, sin extenderse a propiedades en alquiler. Además de este dataset, complementaremos el análisis con datos de la ubicación de las estaciones de subte de la ciudad, facilitadas a partir del scrapeo de esos datos de parte de un usuario de GitHub. El dataset y el scrapeo de donde se obtuve en este (link [https://github.com/nomoreoneday/Beijing_Subway_route_seach_agent/blob/master/subway.txt]).
+
+A partir del análisis del mismo buscamos responder algunas preguntas e hipótesis que guían nuestro análisis.
 Las hipótesis principales que nos surgieron al respecto son:
-Hipótesis 1: Los departamentos de menos ambientes presentan un precio por m² más alto que los de mayor tamaño.
-Hipótesis 2: La superficie es el factor principal del precio.
-Hipótesis 3: La condición de renovación tiene un gran impacto en el precio.
+- Hipótesis 1: Los departamentos de menos ambientes presentan un precio por m² más alto que los de mayor tamaño.
+- Hipótesis 2: La superficie es el factor principal del precio.
+- Hipótesis 3: La condición de renovación tiene un gran impacto en el precio, pero no del precio por m².
+- Hipótesis 4: La cantidad de seguidores tiene una alta correlacion con el precio por m².
+- Hipótesis 5: El impacto en el precio por m² de la cercania al metro es más alta en departamentos chicos que grandes.
+- Hipotesis 6: La ubicación del departamento está asociado con el precio total y la cantidad de habitaciones.
+- Hipotesis 7: hay determinados tipos de construcciones/edificios que solo se relacionan con ciertos rangos de construcción de los edificios
+
 Estas nacen de distintas preguntas en diferenets niveles analíticos que orientaron las mismas. Tales son:
 - En lo descriptivo:
 ¿Cuál es el precio promedio por m² en cada barrio (de ser posible de agrupar las comunidades en barrios)? ¿Cómo se distribuye la oferta por cantidad de ambientes? ¿Tener más habitaciones está vinculado a un mayor precio por m²?
@@ -19,5 +28,6 @@ Estas nacen de distintas preguntas en diferenets niveles analíticos que orienta
 - En lo prescriptivo:
 ¿En qué barrios conviene publicar propiedades nuevas para maximizar rentabilidad? ¿Qué tipos de propiedades tienen mayor atractivo? ¿Podríamos sugerir la construcción de propiedades que nos aseguran precios de venta altos?
 
-A fin de cuentas, el objetivo es identificar patrones de precios y oferta inmobiliaria en Beijing en el periodo 2011-2017, para aportar información estratégica a inmobiliarias como Lianjia y desarrolladores en la toma de decisiones de pricing y segmentación y poder ofrecerle servicios de a clientes de interés sobre oportunidades en el rubro.
+En este repositorio se encuentran todos los archivos necesarios. En la carpeta "data" están los dos datasets. El dataset "Copia de new.csv" es una versión reducida del dataset de ventas de propiedades inmobiliarias ya que por su tamaño no es posible cargarlo en GitHub. Para accederlo de manera completa puedan acceder a él en el link de Kaggle mencionada anteriormente. En esa misma carpeta está también "subway.txt" que contiene los datos de las estaciones de subte de Beijing. Por otro lado, para encontrar la notebook con el código correspondiente pueden entrar al archivo "TP_Descriptiva.ipynb" en la carpeta "notebooks".
 
+A fin de cuentas, el objetivo es identificar patrones de precios y oferta inmobiliaria en Beijing en el periodo 2011-2017, para aportar información estratégica a inmobiliarias como Lianjia y desarrolladores en la toma de decisiones de pricing y segmentación y poder ofrecerle servicios de a clientes de interés sobre oportunidades en el rubro.
