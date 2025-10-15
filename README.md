@@ -15,8 +15,7 @@ Las hipótesis principales que nos surgieron al respecto son:
 - Hipótesis 3: La condición de renovación tiene un gran impacto en el precio, pero no del precio por m².
 - Hipótesis 4: La cantidad de seguidores tiene una alta correlacion con el precio por m².
 - Hipótesis 5: El impacto en el precio por m² de la cercania al metro es más alta en departamentos chicos que grandes.
-- Hipotesis 6: La ubicación del departamento está asociado con el precio total y la cantidad de habitaciones.
-- Hipotesis 7: hay determinados tipos de construcciones/edificios que solo se relacionan con ciertos rangos de construcción de los edificios
+- Hipotesis 6: hay determinados tipos de construcciones/edificios que solo se relacionan con ciertos rangos de construcción de los edificios
 
 Estas nacen de distintas preguntas en diferenets niveles analíticos que orientaron las mismas. Tales son:
 - En lo descriptivo:
