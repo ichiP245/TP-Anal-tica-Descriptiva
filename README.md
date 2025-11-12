@@ -30,3 +30,41 @@ Estas nacen de distintas preguntas en diferenets niveles analíticos que orienta
 En este repositorio se encuentran todos los archivos necesarios. En la carpeta "data" están los dos datasets. El dataset "Copia de new.csv" es una versión reducida del dataset de ventas de propiedades inmobiliarias ya que por su tamaño no es posible cargarlo en GitHub. Para accederlo de manera completa puedan acceder a él en el link de Kaggle mencionada anteriormente. En esa misma carpeta está también "subway.txt" que contiene los datos de las estaciones de subte de Beijing. Por otro lado, para encontrar la notebook con el código correspondiente pueden entrar al archivo "TP_Descriptiva.ipynb" en la carpeta "notebooks".
 
 A fin de cuentas, el objetivo es identificar patrones de precios y oferta inmobiliaria en Beijing en el periodo 2011-2017, para aportar información estratégica a inmobiliarias como Lianjia y desarrolladores en la toma de decisiones de pricing y segmentación y poder ofrecerle servicios de a clientes de interés sobre oportunidades en el rubro.
+
+## Limpieza y tratamiento de datos
+
+Se realizó una limpieza inicial del dataset para eliminar filas con valores incoherentes o caracteres no válidos, asegurando formatos consistentes en todas las columnas.  
+Se corrigieron tipos de datos, se recalculó la variable `totalPrice` y se eliminaron duplicados.  
+Las columnas con proporciones elevadas de datos faltantes, como **DOM**, fueron removidas, mientras que otras de relevancia analítica, como **constructionTime**, se conservaron tras reemplazar valores desconocidos por `NaN` para su posterior imputación.
+
+---
+
+## Análisis y tratamiento de outliers
+
+El análisis exploratorio evidenció variables con distribuciones no normales y presencia de valores extremos.  
+Se decidió conservar los outliers leves al considerarse representativos del mercado, y **ajustar únicamente los valores severos**: truncando los extremos superiores o reemplazando en variables discretas por un máximo razonable.  
+Se eliminaron pocos casos con precios o fechas incoherentes, y se incorporó una nueva variable —**distancia al subte**— que enriquece el análisis de precios por localización.
+
+---
+
+## Manejo de valores faltantes
+
+Se aplicaron pruebas estadísticas para identificar el tipo de ausencia.  
+El **test de Little** permitió descartar la aleatoriedad completa (MCAR), y el análisis de regresiones logísticas mostró que los faltantes dependían de otras variables, por lo que se clasificaron como **MAR**.  
+En consecuencia, se imputaron mediante el método **KNN**, manteniendo la coherencia multivariada del conjunto.  
+Finalmente, se ajustaron los valores imputados (por ejemplo, redondeando *buildingType* a enteros) para conservar su validez semántica.
+
+## Tests de hipótesis
+
+Con el dataset limpio e imputado, se contrastaron las hipótesis planteadas mediante pruebas estadísticas adecuadas según el tipo de variable y los supuestos de normalidad.  
+Se aplicaron comparaciones de medianas (Kruskal–Wallis y test de Dunn), regresiones lineales simples y múltiples, y un test de Chi-cuadrado para variables categóricas.
+
+En síntesis:
+- Los **departamentos más pequeños** tienden a tener un **precio por m² más alto**, aunque la diferencia no es significativa en todos los casos.  
+- La **superficie** resultó ser el **principal determinante del precio total**, confirmando su relevancia en el modelo.  
+- La **condición de renovación**, la **cercanía al metro** y la **cantidad de seguidores** mostraron relaciones **positivas y estadísticamente significativas** con el precio.  
+- Se verificó también una **asociación entre el tipo de edificio y su rango de antigüedad**, lo que sugiere segmentación dentro del mercado.
+
+Estos resultados respaldan la mayoría de las hipótesis formuladas y refuerzan la importancia de los factores estructurales y de localización en la formación de precios inmobiliarios en Beijing.
+
+
