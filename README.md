@@ -74,7 +74,7 @@ Este resultado demuestra que las relaciones entre superficie y condiciones de la
 
 ## Tablero de Business Intelligence (Power BI)
 
-Como cierre del proyecto, se desarrolló un [dashboard interactivo en Power BI](https://app.fabric.microsoft.com/links/E5dga8BW8k?ctid=a1f50a97-21c0-49a7-a9d4-f244ebb42da7&pbi_source=linkShare) que resume los resultados del análisis.
+Como cierre del proyecto, se desarrolló un [dashboard interactivo en Power BI](https://app.fabric.microsoft.com/links/j33VUFUqXf?ctid=a1f50a97-21c0-49a7-a9d4-f244ebb42da7&pbi_source=linkShare) que resume los resultados del análisis.
 El tablero permite explorar el mercado inmobiliario desde dos perspectivas: **una vista general** con indicadores globales y **una vista por distrito** con un análisis más localizado.
 
 La **vista general** muestra las principales métricas del mercado, como cantidad de propiedades, precios promedio por m², superficie promedio y evolución de las ventas a lo largo del tiempo.  
