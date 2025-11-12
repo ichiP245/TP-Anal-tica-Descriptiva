@@ -37,15 +37,11 @@ Se realizó una limpieza inicial del dataset para eliminar filas con valores inc
 Se corrigieron tipos de datos, se recalculó la variable `totalPrice` y se eliminaron duplicados.  
 Las columnas con proporciones elevadas de datos faltantes, como **DOM**, fueron removidas, mientras que otras de relevancia analítica, como **constructionTime**, se conservaron tras reemplazar valores desconocidos por `NaN` para su posterior imputación.
 
----
-
 ## Análisis y tratamiento de outliers
 
 El análisis exploratorio evidenció variables con distribuciones no normales y presencia de valores extremos.  
 Se decidió conservar los outliers leves al considerarse representativos del mercado, y **ajustar únicamente los valores severos**: truncando los extremos superiores o reemplazando en variables discretas por un máximo razonable.  
 Se eliminaron pocos casos con precios o fechas incoherentes, y se incorporó una nueva variable —**distancia al subte**— que enriquece el análisis de precios por localización.
-
----
 
 ## Manejo de valores faltantes
 
@@ -67,4 +63,22 @@ En síntesis:
 
 Estos resultados respaldan la mayoría de las hipótesis formuladas y refuerzan la importancia de los factores estructurales y de localización en la formación de precios inmobiliarios en Beijing.
 
+## Modelado predictivo
 
+Una vez finalizada la etapa de limpieza y validación estadística, se construyeron distintos modelos de regresión con el objetivo de **predecir el precio por m²** de las propiedades.
+
+Se probaron modelos lineales, polinomiales y regularizados, comparando su desempeño en términos de capacidad explicativa y error de predicción.  
+El modelo que ofreció el mejor equilibrio entre **precisión, simplicidad e interpretabilidad** fue una **regresión lineal múltiple con términos polinomiales**, que logró explicar alrededor del **90 % de la variabilidad** del precio y redujo significativamente el error respecto a los modelos base.
+
+Este resultado demuestra que las relaciones entre superficie, condiciones de la propiedad y localización pueden representarse adecuadamente mediante un modelo lineal extendido, brindando una herramienta predictiva sólida para el análisis del mercado inmobiliario de Beijing.
+
+## Tablero de Business Intelligence (Power BI)
+
+Como cierre del proyecto, se desarrolló un **dashboard interactivo en Power BI** que resume los resultados del análisis.
+El tablero permite explorar el mercado inmobiliario desde dos perspectivas: **una vista general** con indicadores globales y **una vista por distrito** con un análisis más localizado.
+
+La **vista general** muestra las principales métricas del mercado, como cantidad de propiedades, precios promedio por m², superficie promedio y evolución de las ventas a lo largo del tiempo.  
+También permite observar la relación entre la **popularidad de las propiedades y su cercanía al subte**, y la distribución de tipos de construcción según el período de edificación.
+
+La **vista por distrito** ofrece un análisis territorial más detallado mediante un **mapa interactivo**, que permite comparar zonas y visualizar de forma contextual la relación entre **superficie y precio** en cada distrito.  
+De este modo, el tablero facilita la identificación de **patrones de demanda, diferencias estructurales y áreas con mayor rentabilidad** dentro del mercado inmobiliario de Beijing.
