@@ -65,12 +65,12 @@ Estos resultados respaldan la mayoría de las hipótesis formuladas y refuerzan 
 
 ## Modelado predictivo
 
-Una vez finalizada la etapa de limpieza y validación estadística, se construyeron distintos modelos de regresión con el objetivo de **predecir el precio por m²** de las propiedades.
+Una vez finalizada la etapa de limpieza y validación estadística, se construyeron distintos modelos de regresión con el objetivo de **predecir el precio total** de las propiedades.
 
 Se probaron modelos lineales, polinomiales y regularizados, comparando su desempeño en términos de capacidad explicativa y error de predicción.  
 El modelo que ofreció el mejor equilibrio entre **precisión, simplicidad e interpretabilidad** fue una **regresión lineal múltiple con términos polinomiales**, que logró explicar alrededor del **90 % de la variabilidad** del precio y redujo significativamente el error respecto a los modelos base.
 
-Este resultado demuestra que las relaciones entre superficie, condiciones de la propiedad y localización pueden representarse adecuadamente mediante un modelo lineal extendido, brindando una herramienta predictiva sólida para el análisis del mercado inmobiliario de Beijing.
+Este resultado demuestra que las relaciones entre superficie y condiciones de la propiedad pueden representarse adecuadamente mediante un modelo lineal extendido, brindando una herramienta predictiva sólida para el análisis del mercado inmobiliario de Beijing.
 
 ## Tablero de Business Intelligence (Power BI)
 
@@ -81,4 +81,4 @@ La **vista general** muestra las principales métricas del mercado, como cantida
 También permite observar la relación entre la **popularidad de las propiedades y su cercanía al subte**, y la distribución de tipos de construcción según el período de edificación.
 
 La **vista por distrito** ofrece un análisis territorial más detallado mediante un **mapa interactivo**, que permite comparar zonas y visualizar de forma contextual la relación entre **superficie y precio** en cada distrito.  
-De este modo, el tablero facilita la identificación de **patrones de demanda, diferencias estructurales y áreas con mayor rentabilidad** dentro del mercado inmobiliario de Beijing.
+De este modo, el tablero facilita la identificación de **patrones de demanda, diferencias estructurales y áreas con mayor potencial** dentro del mercado inmobiliario de Beijing.
