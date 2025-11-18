@@ -80,9 +80,9 @@ Una vez finalizada la etapa de limpieza y validación estadística, se construye
 Se probaron modelos lineales, polinomiales y regularizados, y también modelos no lineales como árboles y modelos de ensamble, comparando su desempeño en términos de capacidad explicativa y error de predicción.
 
 ### Resultados - Variable objetivo: precio total de la propiedad
-![Resultados]('"C:\Users\isidr\OneDrive\Pictures\Screenshots\Captura de pantalla 2025-11-18 132211.png")
+<img width="690" height="309" alt="Captura de pantalla 2025-11-18 132211" src="https://github.com/user-attachments/assets/ef27215d-f6d1-44b6-8d3d-adb79c1997f4" />
 
-El modelo que ofreció el mejor equilibrio entre **precisión, simplicidad e interpretabilidad** fue un **Random Forest de árboles de regresión**, que logró explicar alrededor del **94% de la variabilidad** del precio y redujo significativamente el error respecto a los modelos anteriores.
+El modelo que ofreció el mejor equilibrio entre **precisión, simplicidad e interpretabilidad** fue un **Random Forest de árboles de regresión**, que logró explicar alrededor del **94% de la variabilidad** del precio y redujo significativamente el error respecto a los modelos anteriores. Las variables más importantes en esto fueron la superficie de la propiedad, la población de la comunidad y la fecha de la transacción.
 
 Este resultado demuestra que las relaciones entre superficie y condiciones de la propiedad pueden representarse adecuadamente mediante un modelo no lineal extendido, brindando una herramienta predictiva sólida para el análisis del mercado inmobiliario de Beijing.
 
