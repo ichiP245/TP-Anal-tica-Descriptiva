@@ -1,6 +1,6 @@
 # TP-Analitica-Descriptiva
 
-El presente proyecto consiste en un análisis del mercado inmobiliario con el objetivo final de un modelo de regresión que sirva para predecir los precios de las propiedades. 
+El presente proyecto consiste en un análisis del mercado inmobiliario con el objetivo final de un modelo de regresión que sirva para predecir el precio total de las propiedades (variable objetivo de análisis). 
 
 El mercado inmobiliario es altamente competitivo y volátil, con gran heterogeneidad entre distintas comunidades. Inmobiliarias y desarrolladoras necesitan información precisa para fijar precios de publicación, evaluar oportunidades de inversión y analizar tendencias de oferta. Si los precios se basan en operaciones anteriores de similares características y no en la mera voluntad del vendedor las partes obtendrán un trato más justo (interés del gobierno en busca de un equilibrio general) y las inmobiliarias estarán más informadas para tomar decisiones.
 
@@ -55,22 +55,36 @@ Finalmente, se ajustaron los valores imputados (por ejemplo, redondeando *buildi
 Con el dataset limpio e imputado, se contrastaron las hipótesis planteadas mediante pruebas estadísticas adecuadas según el tipo de variable y los supuestos de normalidad.  
 Se aplicaron comparaciones de medianas (Kruskal–Wallis y test de Dunn), regresiones lineales simples y múltiples, y un test de Chi-cuadrado para variables categóricas.
 
+Resultados de los tests:
+- Hipótesis 1: rechazamos H1 mediante el test de Kruskal-Wallis, por lo que aplicamos el test de Dunn y obtuvimos diferencias significativas entre todas las medianas del precio por m² según cantidad de habitaciones, salvo entre las medianas de 5 y 6 habitaciones.
+  Como se puede ver en el primer gráfico que planteamos, el precio por m² es decreciente. Esto quiere decir que a medida que aumenta la cantidad de habitaciones, disminuye significativamente el precio por m².
+- Hipótesis 2: hicimos una regresión lineal con las variables estandarizadas y obtuvimos que la superficie tenía el coeficiente de regresión más alto, determinando que es la que más hace variar al precio por cada unidad.
+- Hipótesis 3: volvimos a usar el test de Kruskal-Wallis y rechazamos la hipótesis, concluyendo que hay diferencias significativas entre las medianas del precio por m² según la condición de renovación.
+  Posteriormente hicimos una regresión lineal con las condiciones de renovación como variables dummies y los coeficientes fueron significativos, aportando a la conclusión de que la condición de renovación tiene impacto sobre el precio por m².
+- Hipótesis 4: fue significativo el test de correlación de Pearson, por lo que al rechazar la hipótesis nula del test podemos decir que hay asociación lineal entre la cantidad de seguidores y el precio por m².
+- Hipótesis 5: hicimos una regresión lineal simple con la distancia al subte más cercano (km) como variable predictora para predecir la variable target de precio por m². Al obtener que fue significativo el coeficiente podemos decir que 
+- Hipótesis 6: usamos un test de Chi-Cuadrado para variables categóricas y rechazamos la hipótesis nula, concluyendo que hay relación significativa entre los tipos de construcciones y el año en que se construyeron.
+
 En síntesis:
-- Los **departamentos más pequeños** tienden a tener un **precio por m² más alto**, aunque la diferencia no es significativa en todos los casos.  
+- Los **departamentos más pequeños** tienden a tener un **precio por m² más alto**, siendo la diferencia significativa en la mayoría de los casos.  
 - La **superficie** resultó ser el **principal determinante del precio total**, confirmando su relevancia en el modelo.  
 - La **condición de renovación**, la **cercanía al metro** y la **cantidad de seguidores** mostraron relaciones **positivas y estadísticamente significativas** con el precio.  
 - Se verificó también una **asociación entre el tipo de edificio y su rango de antigüedad**, lo que sugiere segmentación dentro del mercado.
 
-Estos resultados respaldan la mayoría de las hipótesis formuladas y refuerzan la importancia de los factores estructurales y de localización en la formación de precios inmobiliarios en Beijing.
+Estos resultados respaldan las hipótesis formuladas y refuerzan la importancia de los factores estructurales y de localización en la formación de precios inmobiliarios en Beijing.
 
 ## Modelado predictivo
 
 Una vez finalizada la etapa de limpieza y validación estadística, se construyeron distintos modelos de regresión con el objetivo de **predecir el precio total** de las propiedades.
 
-Se probaron modelos lineales, polinomiales y regularizados, comparando su desempeño en términos de capacidad explicativa y error de predicción.  
-El modelo que ofreció el mejor equilibrio entre **precisión, simplicidad e interpretabilidad** fue una **regresión lineal múltiple con términos polinomiales**, que logró explicar alrededor del **90 % de la variabilidad** del precio y redujo significativamente el error respecto a los modelos base.
+Se probaron modelos lineales, polinomiales y regularizados, y también modelos no lineales como árboles y modelos de ensamble, comparando su desempeño en términos de capacidad explicativa y error de predicción.
 
-Este resultado demuestra que las relaciones entre superficie y condiciones de la propiedad pueden representarse adecuadamente mediante un modelo lineal extendido, brindando una herramienta predictiva sólida para el análisis del mercado inmobiliario de Beijing.
+### Resultados - Variable objetivo: precio total de la propiedad
+![Resultados]('"C:\Users\isidr\OneDrive\Pictures\Screenshots\Captura de pantalla 2025-11-18 132211.png")
+
+El modelo que ofreció el mejor equilibrio entre **precisión, simplicidad e interpretabilidad** fue un **Random Forest de árboles de regresión**, que logró explicar alrededor del **94% de la variabilidad** del precio y redujo significativamente el error respecto a los modelos anteriores.
+
+Este resultado demuestra que las relaciones entre superficie y condiciones de la propiedad pueden representarse adecuadamente mediante un modelo no lineal extendido, brindando una herramienta predictiva sólida para el análisis del mercado inmobiliario de Beijing.
 
 ## Tablero de Business Intelligence (Power BI)
 
